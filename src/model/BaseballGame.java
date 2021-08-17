@@ -8,4 +8,19 @@ public class BaseballGame {
         systemNumbers = new SystemNumbers(randomNumbers);
         inputNumbers = new InputNumbers(userNumbers);
     }
+
+    public boolean isGameOver() {
+        if (systemNumbers.getStrike(inputNumbers) == 3) {
+            return true;
+        }
+        return false;
+    }
+
+    public int getStrikeCount() {
+        return systemNumbers.getStrike(inputNumbers);
+    }
+
+    public int getBallCount() {
+        return systemNumbers.getBall(inputNumbers);
+    }
 }

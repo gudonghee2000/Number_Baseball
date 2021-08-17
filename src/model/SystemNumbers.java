@@ -17,13 +17,13 @@ public class SystemNumbers {
                 collect(Collectors.toList());
     }
 
-    public int getStrikeCount(InputNumbers inputNumbers) {
+    public int getStrike(InputNumbers inputNumbers) {
         return (int) IntStream.range(0, 3).
                 filter(index -> values.get(index).equals(inputNumbers.getInputNumbers().get(index))).
                 count();
     }
 
-    public int getBallCount(InputNumbers inputNumbers) {
+    public int getBall(InputNumbers inputNumbers) {
         return (int) IntStream.range(0, 3).
                 filter(index -> values.contains(inputNumbers.getInputNumbers().get(index))).
                 filter(index -> !values.get(index).equals(inputNumbers.getInputNumbers().get(index))).
