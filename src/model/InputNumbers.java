@@ -30,4 +30,8 @@ public class InputNumbers {
             throw new IllegalArgumentException("입력된 숫자 중 중복되는 숫자가 있습니다.");
         }
     }
+
+    protected List<BaseballNumber> getInputNumbers() {
+        return values;
+    }
 }

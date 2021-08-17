@@ -15,7 +15,7 @@ public class Input {
 
     private static void isNumber(String[] inputNumbers) {
         Arrays.stream(inputNumbers).forEach(number -> {
-            if(number.matches("^[^1-9]&")){
+            if (number.matches("^[^1-9]$")) {
                 throw new IllegalArgumentException("입력한 숫자 중 1~9가 아닌 숫자가 있습니다.");
             }
         });
