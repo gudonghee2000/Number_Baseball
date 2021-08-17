@@ -1,5 +1,7 @@
 package controller;
 
+import model.SystemNumbers;
+
 import java.util.Scanner;
 
 public class Application {
