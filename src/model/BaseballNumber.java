@@ -9,19 +9,15 @@ public class BaseballNumber {
     }
 
     private void isNumber(int number) {
-        if(number < 1 || number > 9){
+        if (number < 1 || number > 9) {
             throw new IllegalArgumentException("입력한 숫자 중 1~9가 아닌 수가 있습니다.");
         }
     }
 
-    protected int getNumber(){
-        return value;
-    }
-
     @Override
-    public boolean equals(Object o){
+    public boolean equals(Object o) {
         BaseballNumber that = (BaseballNumber) o;
-        if(this.getNumber() == that.getNumber()){
+        if (this.value == that.value) {
             return true;
         }
         return false;

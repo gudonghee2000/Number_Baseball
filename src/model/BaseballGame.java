@@ -34,5 +34,4 @@ public class BaseballGame {
     public void resetInputNumbers(int[] userNumbers) {
         inputNumbers = new InputNumbers(userNumbers);
     }
-
 }

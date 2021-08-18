@@ -10,23 +10,19 @@ public class GameController {
 
     public static void runGame() {
         boolean gameRestart = false;
-
         playGame();
-
     }
 
     private static void playGame() {
         BaseballGame baseballGame = new BaseballGame(createThreeBaseballNumber(), createUserInputNumbers());
         while (baseballGame.isNotGameOver()) {
             if (baseballGame.isNoHint()) {
-                GameView.noHint();
-            } else {
-                GameView.showHints(baseballGame.getBallCount(), baseballGame.getStrikeCount());
+                GameView.showNothing();
+                continue;
             }
+            GameView.showHints(baseballGame.getBallCount(), baseballGame.getStrikeCount());
             baseballGame.resetInputNumbers(createUserInputNumbers());
         }
         GameView.finishGame();
     }
-
-
 }
