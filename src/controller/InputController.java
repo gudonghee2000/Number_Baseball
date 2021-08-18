@@ -1,13 +1,16 @@
 package controller;
 
+import view.GameView;
+
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class Input {
+public class InputController {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static int[] createUserInputNumbers() {
+        GameView.pleaseInputNumber();
         String[] inputNumbers = scanner.nextLine().split("");
         isNumber(inputNumbers);
         return Arrays.stream(inputNumbers).mapToInt(number -> Integer.parseInt(number)).toArray();

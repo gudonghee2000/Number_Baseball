@@ -9,8 +9,15 @@ public class BaseballGame {
         inputNumbers = new InputNumbers(userNumbers);
     }
 
-    public boolean isGameOver() {
+    public boolean isNotGameOver() {
         if (systemNumbers.getStrike(inputNumbers) == 3) {
+            return false;
+        }
+        return true;
+    }
+
+    public boolean isNoHint() {
+        if (getBallCount() == 0 && getStrikeCount() == 0) {
             return true;
         }
         return false;
@@ -23,4 +30,9 @@ public class BaseballGame {
     public int getBallCount() {
         return systemNumbers.getBall(inputNumbers);
     }
+
+    public void resetInputNumbers(int[] userNumbers) {
+        inputNumbers = new InputNumbers(userNumbers);
+    }
+
 }
