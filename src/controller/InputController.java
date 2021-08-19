@@ -22,4 +22,16 @@ public class InputController {
             }
         });
     }
+
+    public static int flagInput() {
+        String flag = scanner.nextLine();
+        isFlag(flag);
+        return Integer.parseInt(flag);
+    }
+
+    private static void isFlag(String flag) {
+        if (flag.matches("^[^1-2]$")) {
+            throw new IllegalArgumentException("입력한 숫자가 1 또는 2가 아닙니다.");
+        }
+    }
 }

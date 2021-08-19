@@ -10,7 +10,10 @@ public class GameController {
 
     public static void runGame() {
         boolean gameRestart = false;
-        playGame();
+        while (!gameRestart) {
+            playGame();
+            gameRestart = restartGame();
+        }
     }
 
     private static void playGame() {
@@ -18,11 +21,22 @@ public class GameController {
         while (baseballGame.isNotGameOver()) {
             if (baseballGame.isNoHint()) {
                 GameView.showNothing();
-                continue;
+            } else {
+                GameView.showHints(baseballGame.getBallCount(), baseballGame.getStrikeCount());
             }
-            GameView.showHints(baseballGame.getBallCount(), baseballGame.getStrikeCount());
             baseballGame.resetInputNumbers(createUserInputNumbers());
         }
+        GameView.showHints(baseballGame.getBallCount(), baseballGame.getStrikeCount());
         GameView.finishGame();
+    }
+
+    private static boolean restartGame() {
+        GameView.restartGame();
+        int flag = InputController.flagInput();
+        if (flag == 1) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }
